@@ -25,4 +25,4 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: rahul8096/deployment:1.0.0
+        image: rahul8096/deployment:1.0.0 .
