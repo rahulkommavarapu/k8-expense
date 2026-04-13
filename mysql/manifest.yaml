@@ -24,7 +24,7 @@ spec:
         project: expense
     spec:
       containers:
-        - name: nginx
+        - name: mysql
           image: rahul8096/mysql:1.0.0
 ---
 # give the Cluster Ip for Connecting the Backend service to Mysql database
