@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: rahul8096/backend:1.0.0
+          image: rahul8096/backend:1.0.1
 ---
 kind: Service
 apiVersion: v1
