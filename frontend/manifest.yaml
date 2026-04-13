@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: frontend
   namespace: expense
+  # labels of deployment resource
   labels:
     app: frontend
     tier: web
@@ -22,22 +23,23 @@ spec:
         project: expense
     spec:
       containers:
-        - name: nginx
-          image: rahul8096/frontend:1.0.1
-
+      - name: nginx
+        image: rahul8096/frontend:1.0.1
+        ports:
+        - containerPort: 8080
 ---
-apiVersion: v1
 kind: Service
+apiVersion: v1
 metadata:
   name: frontend
   namespace: expense
 spec:
-  type: LoadBalancer # For ublic Purpose we will give the loadbalancer Service
-  selector:
+  type: LoadBalancer
+  selector: # labels are used as selectors
     app: frontend
     tier: web
     project: expense
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
+  - protocol: TCP
+    port: 80 # service port
+    targetPort: 8080
