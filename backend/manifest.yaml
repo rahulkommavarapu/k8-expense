@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: expense
+  labels:
+    app: Backend
+    tier: Backend
+    project: expense
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Backend
+      tier: Backend
+      project: expense
+  template:
+    metadata:
+      labels:
+        app: Backend
+        tier: Backend
+        project: expense
+    spec:
+      containers:
+        - name: nginx
+          image: rahul8096/backend:1.0.0
