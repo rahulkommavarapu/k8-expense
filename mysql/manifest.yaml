@@ -30,18 +30,18 @@ spec:
 # give the Cluster Ip for Connecting the Backend service to Mysql database
 apiVersion : v1
 kind: Service
-metadata : 
-  name : mysql
-  namespace : expense
-spec : 
+metadata: 
+  name: mysql
+  namespace: expense
+spec: 
  selector:
-   app : mysql
-   tier : mysql
-   project : expense
+   app: mysql
+   tier: mysql
+   project: expense
  ports : 
  - protocol: TCP
-   port : 3306 # Service Port
-   targetPort : 3306 # Mandotory Port 
+   port: 3306 # Service Port
+   targetPort: 3306 # Mandotory Port 
 
 
 
