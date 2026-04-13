@@ -26,3 +26,23 @@ spec:
       containers:
         - name: nginx
           image: rahul8096/mysql:1.0.0
+----
+# give the Cluster Ip for Connecting the Backend service to Mysql database
+apiVersion : v1
+kind: Service
+metadata : 
+name : mysql
+spec : 
+ selector:
+ app : mysql
+ tier : mysql
+ project : expense
+ports : 
+- protpcol: TCP
+  port : 3306 # Service Port
+  targerport : 3306 # Mandotory Port 
+
+
+
+
+
